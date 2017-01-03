@@ -135,6 +135,11 @@ main section {
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	z-index: 1;
+
+	@media @tablets {
+		background-position: 100% 0%;
+		background-size: auto 100%;
+	}
 }
 
 .lightbar {
@@ -145,6 +150,10 @@ main section {
 	left: 10%;
 	position: absolute;
 	width: 400px;
+
+	@media @tablets {
+		bottom: 20%;
+	}
 }
 
 // Start a loop with 4 as the max
@@ -194,6 +203,11 @@ main section {
 	background: @textcolor;
 }
 
+.how-it-works h2 {
+	color: @bgcolor;
+	padding-top: 3rem;
+}
+
 .steps {
 	display: flex;
 	justify-content: center;
@@ -204,6 +218,11 @@ main section {
 	margin: 0 2.5vw;
 	text-align: center;
 	width: 20vw;
+
+	@media @tablets {
+		margin: 0 1vw;
+		width: 31vw;
+	}
 }
 
 .step-number {
@@ -234,6 +253,10 @@ main section {
 	height: 33vh;
 	margin-top: 5rem;
 	width: auto;
+
+	@media @tablets {
+		height: 20vh;
+	}
 }
 
 .step h3, .step p {
@@ -252,17 +275,32 @@ main section {
 /* SECTION FIVE */
 .the-design h2 {
 	margin-bottom: 7.5rem;
+
+	@media @tablets {
+		margin-top: 0;
+		padding-top: 2rem;
+	}
 }
 
 .the-design .img-container {
 	margin: 0 auto;
 	position: relative;
 	width: 20vw;
+
+	@media @tablets {
+		text-align: center;
+		width: 50vw;
+	}
 }
 
 .the-design .img-container img {
 	height: auto;
 	width: 100%;
+
+	@media @tablets {
+		height: 50vh;
+		width: auto;
+	}
 }
 
 .spec-label {
@@ -307,6 +345,7 @@ main section {
 	left: 33%;
 	position: relative;
 	top: -5%;
+	width: 3rem;
 }
 
 .height-label .size-line {
@@ -331,10 +370,18 @@ main section {
 
 .label-left {
 	left: 20%;
+
+	@media @tablets {
+		left: 5%;
+	}
 }
 
 .label-right {
-	right: 20%;
+	left: 70%;
+
+	@media @tablets {
+		left: 5%;
+	}
 }
 
 .label-line {
@@ -352,18 +399,34 @@ main section {
 
 .label-right .label-line {
 	right: 110%;
+	@media @tablets {
+		right: initial;
+		left: 100%;
+	}
 }
 
 .payment-label {
 	top: 15%;
+
+	@media @tablets {
+		top: 12%;
+	}
 }
 
 .materials-label {
 	top: 35%;
+
+	@media @tablets {
+		top: 30%;
+	}
 }
 
 .tech-label {
 	top: 60%;
+
+	@media @tablets {
+		top: 55%;
+	}
 }
 
 .spec-label:nth-child(3) .label-line {
@@ -392,6 +455,12 @@ main section {
 	background-position: 0 100%;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
+
+
+	@media @tablets {
+		background-position: 0 0;
+		background-size: auto 100%;
+	}
 }
 
 .outro .sect-text h2, .outro .sect-text p, .outro .sect-text button {
@@ -423,10 +492,18 @@ main section {
 
 .bernard-one {
 	transform: translate3d(20px, 125px, -50px);
+
+	@media @tablets {
+		transform: translate3d(110px, 425px, -50px);
+	}
 }
 
 .bernard-two {
-	transform: translate3d(-100px, 150px, 0);	
+	transform: translate3d(-100px, 150px, 0);
+
+	@media @tablets {
+		transform: translate3d(-10px, 450px, 0);
+	}
 }
 
 /* FOOTER */
