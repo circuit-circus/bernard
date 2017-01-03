@@ -38,6 +38,31 @@ $(document).ready(function() {
 		if(scrollPos > designTop - 50) {
 			$('.the-design').addClass('animated');
 		}
+	}); // .scroll end
+
+
+	/* SIGNUP SHEET */ 
+	$('.signup').click(function(e) {
+		toggleSignup(true);
+		e.preventDefault();
+	});
+
+	$('.close').click(function(e) {
+		toggleSignup(false);
+		e.preventDefault();
+	});
+
+	$(window).keyup(function(e) {
+		if($('.signup-sheet').hasClass('visible')) {
+			// If clicked esc
+			if(e.keyCode === 27) {
+				toggleSignup(false);
+			}
+		}
+	});
+
+	$('.signup-sheet form').submit(function(e) {
+		e.preventDefault();
 	});
 });
 
@@ -49,4 +74,37 @@ function updateLightbar(newNumber) {
 		}
 	}
 	lightElem.addClass('light-' + newNumber);
+}
+
+function toggleSignup(shouldShow) {
+	if(shouldShow) {
+		lockScroll();
+		$('.signup-sheet').addClass('visible');
+	}
+	else {
+		unlockScroll();
+		$('.signup-sheet').removeClass('visible');
+	}
+}
+
+var scrollPosition = [0, 0];
+function lockScroll() {
+	// lock scroll position, but retain settings for later
+	scrollPosition = [
+	  self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+	  self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
+	];
+	var html = jQuery('html'); // it would make more sense to apply this to body, but IE7 won't have that
+	html.data('scroll-position', scrollPosition);
+	html.data('previous-overflow', html.css('overflow'));
+	html.css('overflow', 'hidden');
+	window.scrollTo(scrollPosition[0], scrollPosition[1]);
+}
+
+function unlockScroll() {
+	// un-lock scroll position
+	var html = jQuery('html');
+	var scrollPosition = html.data('scroll-position');
+	html.css('overflow', html.data('previous-overflow'));
+	window.scrollTo(scrollPosition[0], scrollPosition[1])
 }

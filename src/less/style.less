@@ -16,6 +16,10 @@
 	color: @bgcolor;
 }
 
+*::placeholder, *::-webkit-input-placeholder, *::-moz-placeholder, *:-ms-input-placeholder {
+	color: @bgcolor;
+}
+
 html {
 	font-size: 14px;
 }
@@ -122,10 +126,18 @@ main section {
 
 .text-right {
 	right: 15%;
+
+	@media @tablets {
+		right: 10%;
+	}
 }
 
 .text-shallow {
 	width: 30%;
+
+	@media @tablets {
+		width: 35%;
+	}
 }
 
 /* SECTION TWO */
@@ -174,10 +186,17 @@ main section {
 }
 
 /* SECTION THREE */
-/*.problem-statement {
-	background: linear-gradient(#fff, #eee);
-	background-size: 100% auto;
-}*/
+.problem-statement {
+	/*background: linear-gradient(#fff, #eee);
+	background-size: 100% auto;*/
+
+	@media @tablets {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
 
 .problem-statement img {
 	position: absolute;
@@ -201,6 +220,13 @@ main section {
 /* SECTION FOUR */
 .how-it-works {
 	background: @textcolor;
+
+	@media @tablets {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 }
 
 .how-it-works h2 {
@@ -273,6 +299,14 @@ main section {
 }
 
 /* SECTION FIVE */
+.the-design {
+	@media @tablets {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
 .the-design h2 {
 	margin-bottom: 7.5rem;
 
@@ -409,7 +443,7 @@ main section {
 	top: 15%;
 
 	@media @tablets {
-		top: 12%;
+		top: 32%;
 	}
 }
 
@@ -417,7 +451,7 @@ main section {
 	top: 35%;
 
 	@media @tablets {
-		top: 30%;
+		top: 50%;
 	}
 }
 
@@ -425,7 +459,7 @@ main section {
 	top: 60%;
 
 	@media @tablets {
-		top: 55%;
+		top: 75%;
 	}
 }
 
@@ -504,6 +538,55 @@ main section {
 	@media @tablets {
 		transform: translate3d(-10px, 450px, 0);
 	}
+}
+
+/* SIGNUP SHEET */
+.signup-sheet {
+	background: @textcolor;
+	left: 0;
+	position: fixed;
+	top: -100%;
+	transition: top 750ms ease-in-out;
+	z-index: 999;
+}
+
+.signup-sheet.visible {
+	top: 0;
+}
+
+.signup-sheet h2, .signup-sheet p {
+	color: @bgcolor;
+}
+
+form input {
+	background: none; 
+	border: 3px solid @bgcolor;
+	color: @bgcolor;
+	font-family: @hfont;
+	font-size: 1rem;
+	margin-top: 2rem;
+	padding: 1rem;
+}
+
+form input[type="email"] {
+	width: 20rem;
+}
+
+form input[type="submit"] {
+	text-transform: uppercase;
+	width: 7.5rem;
+}
+
+.close {
+	background: none;
+	border: none;
+	color: @bgcolor;
+	font-family: @hfont;
+	font-size: 4rem;
+	height: 2rem;
+	position: absolute;
+	right: 5%;
+	width: 2rem; 
 }
 
 /* FOOTER */
