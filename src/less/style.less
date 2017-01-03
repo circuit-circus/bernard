@@ -100,6 +100,7 @@ main section {
 	background-position: 100% 100%;
 	background-repeat: no-repeat;
 	background-size: auto 90%;
+	z-index: 3;
 }
 
 .introduction .sect-text p {
@@ -206,12 +207,24 @@ main section {
 }
 
 .step-number {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0 0;
+	width: 100%;
+}
+
+.step-number span {
 	background: @bgcolor;
+	align-items: center;
+	border: 3px solid @bgcolor;
 	border-radius: 100%;
 	color: @textcolor;
-	display: table-cell;
+	display: flex;
 	font-family: @hfont;
+	font-weight: 900;
 	height: 2.5rem;
+	justify-content: center;
 	text-align: center;
 	vertical-align: middle;
 	width: 2.5rem;
@@ -229,6 +242,7 @@ main section {
 
 .step h3 {
 	font-size: 2rem;
+	margin: 0 0 1rem;
 }
 
 .step p {
