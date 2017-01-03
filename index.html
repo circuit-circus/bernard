@@ -13,7 +13,7 @@
     <body>
         <main>
         	<section class="introduction">
-        		<div class="intro-text">
+        		<div class="sect-text text-left">
 	        		<h1>Bernard</h1>
 	        		<p>Some text to introduce Bernard</p>
 	        		<a href="" class="btn">
@@ -23,70 +23,83 @@
         	</section>
         	<section class="product-presentation">
         		<div class="lightbar light-1"></div>
-        		<div class="pres-text">
+        		<div class="sect-text text-right text-shallow">
 	        		<h2>Product presentation</h2>
 	        		<p>This is where the text that introduces Bernard more in-depth goes.</p>
         		</div>
         	</section>
         	<section class="problem-statement">
-        		<h2>Problem statement</h2>
-        		<p>This is where we say what problem we're solving with Bernard.</p>
+        		<img src="src/img/piggybank.png" class="pig-img"/>
+        		<img src="src/img/hand-with-card.png" class="card-img" />
+        		<div class="sect-text text-left text-shallow">
+	        		<h2>Problem statement</h2>
+	        		<p>This is where we say what problem we're solving with Bernard.</p>
+        		</div>
         	</section>
         	<section class="how-it-works">
-        		<h2>How it works</h2>
-        		<div class="step step-one">
-        			<img src="hand-with-phone.png">
-        			<h3>Step 1</h3>
-        			<p>This is the first step of the process in using Bernard</p>
-        		</div>
-        		<div class="step step-two">
-        			<img src="bernard_single.png">
-        			<h3>Step 2</h3>
-        			<p>This is the second step of the process in using Bernard</p>
-        		</div>
-        		<div class="step step-three">
-        			<img src="broken_bernard.png">
-        			<h3>Step 3</h3>
-        			<p>This is the third step of the process in using Bernard</p>
+        		<h2 class="text-center">How it works</h2>
+        		<div class="steps">
+	        		<div class="step step-one">
+	        			<img src="src/img/hand-with-phone.png">
+	        			<h3>Step 1</h3>
+	        			<p>This is the first step of the process in using Bernard</p>
+	        		</div>
+	        		<div class="step step-two">
+	        			<img src="src/img/bernard_single.png">
+	        			<h3>Step 2</h3>
+	        			<p>This is the second step of the process in using Bernard</p>
+	        		</div>
+	        		<div class="step step-three">
+	        			<img src="src/img/broken_bernard.png">
+	        			<h3>Step 3</h3>
+	        			<p>This is the third step of the process in using Bernard</p>
+	        		</div>
         		</div>
         	</section>
-        	<section>
-        		<h2>The design</h2>
-        		<img src="bernard_single.png">
-        		<div class="size-label width-label">
-        			<p>10 cm</p>
-        			<div class="size-line"></div>
+        	<section class="the-design">
+        		<h2 class="text-center">The design</h2>
+        		<div class="img-container">
+        			<img src="src/img/bernard_single.png">
+        			<div class="size-label width-label">
+        				<div class="size-line"></div>
+	        			<p>10 cm</p>
+	        		</div>
+	        		<div class="size-label height-label">
+	        			<div class="size-line"></div>
+	        			<p>15 cm</p>
+	        		</div>
         		</div>
-        		<div class="size-label height-label">
-        			<p>15 cm</p>
-        			<div class="size-line"></div>
-        		</div>
-        		<div class="spec-label payment-label">
+        		<div class="spec-label payment-label label-left">
         			<p>Something about the payment stuff</p>
         			<div class="label-line"></div>
         		</div>
-        		<div class="spec-label materials-label">
+        		<div class="spec-label materials-label label-right">
         			<p>Something about the breakable materials</p>
         			<div class="label-line"></div>
         		</div>
-        		<div class="spec-label tech-label">
+        		<div class="spec-label tech-label label-left">
         			<p>Something about the tech in the base</p>
         			<div class="label-line"></div>
         		</div>
         	</section>
-        	<section>
-        		<h2>A call to action perhaps 2 lines</h2>
-        		<a href="" class="btn">
-        			<button>Call-to-action</button>
-        		</a>
+        	<section class="outro">
+        		<div class="sect-text text-left text-shallow">
+	        		<h2>A call to action perhaps 2 lines</h2>
+	        		<a href="#" class="btn">
+	        			<button>Call-to-action</button>
+	        		</a>
+        		</div>
+        		<div class="img-container">
+					<img class="bernard-one" src="src/img/bernard_single.png"/>
+					<img class="bernard-two" src="src/img/bernard_single.png"/>
+        		</div>
         	</section>
         </main>
         <footer>
         	<table>
         		<tr>
-					<td>Copyright 2017 Bernard. All rights reserved.</td>
-					<td><a href="#">Contact</a></td>
-					<td><a href="#">Terms and conditions</a></td>
+					<td class="table-left">Copyright 2017 Bernard. All rights reserved.</td>
+					<td class="table-right"><a href="#">Contact</a>·<a href="#">Terms and conditions</a></td>
         		</tr>
         	</table>
         </footer>

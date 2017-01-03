@@ -1,7 +1,6 @@
 $(document).ready(function() {
 	$(window).scroll(function() {
-		console.log($('.product-presentation').offset().top);
-		console.log($(window).scrollTop());
+		/* LIGHTBAR */ 
 		var scrollPos = $(window).scrollTop(),
 			presTop = $('.product-presentation').offset().top,
 			probTop = $('.problem-statement').offset().top,
@@ -9,8 +8,6 @@ $(document).ready(function() {
 			stepTwo = presTop + (sectionDelta / 4),
 			stepThree = presTop + (sectionDelta / 4) * 2,
 			stepFour = presTop + (sectionDelta / 4) * 3;
-
-		console.log(sectionDelta);
 
 		if(scrollPos < presTop) {
 			updateLightbar(1);
@@ -25,6 +22,16 @@ $(document).ready(function() {
 			updateLightbar(4);
 		}
 
+		/* CREDIT CARD */
+		var cardMax = probTop + 100,
+			cardPx = cardMax - scrollPos,
+			cardTrans = 'rotate(-100deg) translate(' + cardPx + 'px)';
+		if(cardPx > 266) {
+			$('.card-img').css({
+				transform: cardTrans
+			});
+		}
+		//console.log(cardTrans);
 	});
 });
 
@@ -36,5 +43,4 @@ function updateLightbar(newNumber) {
 		}
 	}
 	lightElem.addClass('light-' + newNumber);
-	console.log('updateLightbar' + newNumber);
 }
