@@ -31,7 +31,13 @@ $(document).ready(function() {
 				transform: cardTrans
 			});
 		}
-		//console.log(cardTrans);
+		
+		/* THE DESIGN */
+		var designTop = $('.the-design').offset().top;
+
+		if(scrollPos > designTop - 50) {
+			$('.the-design').addClass('animated');
+		}
 	});
 });
 

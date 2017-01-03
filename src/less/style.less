@@ -6,6 +6,16 @@
     color: @textcolor;
 }
 
+::selection {
+	background: @textcolor;
+	color: @bgcolor;
+}
+
+::-moz-selection {
+	background: @textcolor;
+	color: @bgcolor;
+}
+
 html {
 	font-size: 14px;
 }
@@ -27,7 +37,7 @@ h1, h2, h3 {
 	text-transform: uppercase;
 }
 
-p, button {
+p, button, small {
 	font-family: @pfont;
 	margin: 0;
 }
@@ -48,7 +58,7 @@ h3 {
 .btn {
 	border: 2px solid @textcolor;
 	display: inline-block;
-	margin-top: 1rem;
+	margin-top: 2rem;
 	padding: 0.8rem;
 }
 
@@ -61,7 +71,7 @@ h3 {
 	height: 3rem;
 	padding: none;
 	text-transform: uppercase;
-	width: 10rem;
+	width: 16rem;
 }
 
 .btn:hover {
@@ -73,11 +83,15 @@ h3 {
 }
 
 p {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 main section {
 	position: relative;
+}
+
+.sect-text h2 {
+	line-height: 1.25;
 }
 
 /* SECTION ONE */
@@ -86,6 +100,10 @@ main section {
 	background-position: 100% 100%;
 	background-repeat: no-repeat;
 	background-size: auto 90%;
+}
+
+.introduction .sect-text p {
+	width: 100%;
 }
 
 .sect-text {
@@ -106,7 +124,7 @@ main section {
 }
 
 .text-shallow {
-	width: 25%;
+	width: 30%;
 }
 
 /* SECTION TWO */
@@ -115,6 +133,7 @@ main section {
 	background-position: 100% 50%;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
+	z-index: 1;
 }
 
 .lightbar {
@@ -140,11 +159,16 @@ main section {
 	.generate-light(@n, (@i + 1));
 }
 
-.product-presentation .sect-text h2, .product-presentation .sect-text p {
+.product-presentation .sect-text h2, .product-presentation .sect-text p, .product-presentation .sect-text small {
 	color: @bgcolor;
 }
 
 /* SECTION THREE */
+/*.problem-statement {
+	background: linear-gradient(#fff, #eee);
+	background-size: 100% auto;
+}*/
+
 .problem-statement img {
 	position: absolute;
 	width: 20rem;
@@ -157,16 +181,18 @@ main section {
 
 .pig-img {
 	right: 20%;
-	z-index: -2;
 }
 
 .card-img {
 	transform: rotate(-100deg) translate(calc(~"20rem + 20px"));
 	right: 12%;
-	z-index: -1;
 }
 
 /* SECTION FOUR */
+.how-it-works {
+	background: @textcolor;
+}
+
 .steps {
 	display: flex;
 	justify-content: center;
@@ -179,10 +205,26 @@ main section {
 	width: 20vw;
 }
 
+.step-number {
+	background: @bgcolor;
+	border-radius: 100%;
+	color: @textcolor;
+	display: table-cell;
+	font-family: @hfont;
+	height: 2.5rem;
+	text-align: center;
+	vertical-align: middle;
+	width: 2.5rem;
+}
+
 .step img {
 	height: 33vh;
 	margin-top: 5rem;
 	width: auto;
+}
+
+.step h3, .step p {
+	color: @bgcolor;
 }
 
 .step h3 {
@@ -210,7 +252,20 @@ main section {
 }
 
 .spec-label {
+	opacity: 0;
 	position: absolute;
+}
+
+.spec-label:nth-child(3) {
+	transition: opacity 500ms;
+}
+
+.spec-label:nth-child(4) {
+	transition: opacity 500ms 500ms;
+}
+
+.spec-label:nth-child(5) {
+	transition: opacity 500ms 1000ms;
 }
 
 .spec-label p {
@@ -241,7 +296,7 @@ main section {
 }
 
 .height-label .size-line {
-	border-right: 1px dotted rgba(0, 0, 0, 0.5);
+	border-right: 1px dotted @textcolor;
 	height: 100%;
 	position: absolute;
 	top: -50%;
@@ -254,7 +309,7 @@ main section {
 }
 
 .width-label .size-line {
-	border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
+	border-bottom: 1px dotted @textcolor;
 	height: 1px;
 	position: absolute;
 	width: 100%;
@@ -269,11 +324,12 @@ main section {
 }
 
 .label-line {
-	background: rgba(0, 0, 0, 0.5);
+	background: @textcolor;
 	bottom: 50%;
 	height: 1px;
 	position: absolute;
-	width: 15vw;
+	transition: width 300ms;
+	width: 0;
 }
 
 .label-left .label-line {
@@ -294,6 +350,26 @@ main section {
 
 .tech-label {
 	top: 60%;
+}
+
+.spec-label:nth-child(3) .label-line {
+	transition: width 500ms 50ms;
+}
+
+.spec-label:nth-child(4) .label-line {
+	transition: width 500ms 600ms;
+}
+
+.spec-label:nth-child(5) .label-line {
+	transition: width 500ms 1150ms;
+}
+
+.the-design.animated .spec-label {
+	opacity: 1;
+}
+
+.the-design.animated .spec-label .label-line {
+	width: 15vw;
 }
 
 /* SECTION SIX */
