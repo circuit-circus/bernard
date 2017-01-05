@@ -47,8 +47,28 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
-	$('.close').click(function(e) {
+	$('.contact').click(function(e) {
+		toggleContact(true);
+		e.preventDefault();
+	});
+
+	$('.signup-sheet .close').click(function(e) {
 		toggleSignup(false);
+		e.preventDefault();
+	});
+
+	$('.contact-sheet .close').click(function(e) {
+		toggleContact(false);
+		e.preventDefault();
+	});
+
+	$('.terms').click(function(e) {
+		toggleTerms(true);
+		e.preventDefault();
+	});
+
+	$('.terms-sheet .close').click(function(e) {
+		toggleTerms(false);
 		e.preventDefault();
 	});
 
@@ -57,6 +77,8 @@ $(document).ready(function() {
 			// If clicked esc
 			if(e.keyCode === 27) {
 				toggleSignup(false);
+				toggleContact(false);
+				toggleTerms(false);
 			}
 		}
 	});
@@ -84,6 +106,28 @@ function toggleSignup(shouldShow) {
 	else {
 		unlockScroll();
 		$('.signup-sheet').removeClass('visible');
+	}
+}
+
+function toggleContact(shouldShow) {
+	if(shouldShow) {
+		lockScroll();
+		$('.contact-sheet').addClass('visible');
+	}
+	else {
+		unlockScroll();
+		$('.contact-sheet').removeClass('visible');
+	}
+}
+
+function toggleTerms(shouldShow) {
+	if(shouldShow) {
+		lockScroll();
+		$('.terms-sheet').addClass('visible');
+	}
+	else {
+		unlockScroll();
+		$('.terms-sheet').removeClass('visible');
 	}
 }
 

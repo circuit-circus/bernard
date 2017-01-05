@@ -41,7 +41,7 @@ h1, h2, h3 {
 	text-transform: uppercase;
 }
 
-p, button, small {
+p, button, small, ul {
 	font-family: @pfont;
 	margin: 0;
 }
@@ -540,7 +540,7 @@ main section {
 
 .outro .btn button::after {
 	background: @bgcolor;
-	z-index: 0;
+	z-index: -1;
 }
 
 .outro .btn:hover button::after {
@@ -583,7 +583,7 @@ main section {
 	background: @textcolor;
 	left: 0;
 	position: fixed;
-	top: -100%;
+	top: -110%;
 	transition: top 750ms ease-in-out;
 	z-index: 999;
 }
@@ -611,20 +611,38 @@ form input[type="email"] {
 }
 
 form input[type="submit"] {
+	cursor: pointer;
 	text-transform: uppercase;
+	transition: all 300ms;
 	width: 7.5rem;
+}
+
+form input[type="submit"]:hover {
+	background: @bgcolor;
+	color: @textcolor;
+}
+
+.close-container {
+	position: absolute;
+	right: 5%;
+	top: 0;
 }
 
 .close {
 	background: none;
 	border: none;
 	color: @bgcolor;
+	cursor: pointer;
+	display: block;
 	font-family: @hfont;
 	font-size: 4rem;
 	height: 2rem;
-	position: absolute;
-	right: 5%;
+	transition: transform 300ms;
 	width: 2rem; 
+}
+
+.close:hover {
+	transform: scale(1.1);
 }
 
 /* FOOTER */
@@ -653,12 +671,12 @@ footer table {
 	text-align: right;
 }
 
-.table-right a {
+.table-right a, .contact-sheet a {
 	position: relative;
 	text-decoration: none;
 }
 
-.table-right a::after {
+.table-right a::after, .contact-sheet a::after {
 	background: @bgcolor;
 	bottom: 0;
 	content: '';
@@ -669,8 +687,7 @@ footer table {
 	width: 0;
 }
 
-.table-right a:hover::after {
-	background: @bgcolor;
+.table-right a:hover::after, .contact-sheet a:hover::after {
 	height: 1px;
 	left: 0;
 	width: 100%;
@@ -682,4 +699,67 @@ footer table {
 
 .table-right a:last-child {
 	margin-left: 0.5rem;
+}
+
+/* CONTACT SHEET */ 
+.contact-sheet {
+	background-color: @bgcolor;
+	left: 0;
+	position: fixed;
+	top: -110%;
+	transition: top 750ms ease-in-out;
+	z-index: 999;
+}
+
+.contact-sheet.visible {
+	top: 0;
+}
+
+.contact-sheet ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.contact-sheet ul li {
+	margin: 1rem 0;
+}
+
+.contact-sheet a::after {
+	background: @textcolor;
+}
+
+.contact-sheet .close {
+	color: @textcolor;
+}
+
+/* TERMS SHEET */ 
+.terms-sheet {
+	background-color: @textcolor;
+	left: 0;
+	position: fixed;
+	top: -110%;
+	transition: top 750ms ease-in-out;
+	z-index: 999;
+}
+
+.terms-sheet.visible {
+	top: 0;
+}
+
+.terms-sheet .sect-text {
+	height: 100%;
+	margin: 0 auto;
+	position: static;
+	width: 50%;
+}
+
+.terms-sheet h2 {
+	color: @bgcolor;
+}
+
+.terms-sheet p {
+	color: @bgcolor;
+	height: 80%;
+	overflow: scroll;
 }
