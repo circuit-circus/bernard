@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$(window).scroll(function() {
 		/* LIGHTBAR */ 
 		var scrollPos = $(window).scrollTop(),
-			presTop = $('.product-presentation').offset().top,
+			presTop = $('.product-presentation').offset().top - 100,
 			probTop = $('.problem-statement').offset().top,
 			sectionDelta = (probTop - presTop) / 2,
 			stepTwo = presTop + (sectionDelta / 4),

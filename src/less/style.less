@@ -53,6 +53,7 @@ h1 {
 
 h2 {
 	font-size: 2rem;
+	position: relative;
 }
 
 h3 {
@@ -60,34 +61,47 @@ h3 {
 }
 
 .btn {
-	border: 2px solid @textcolor;
+	border: 3px solid @acccolor;
 	display: inline-block;
 	margin-top: 2rem;
-	padding: 0.8rem;
 }
 
 .btn button {
 	background: none;
 	border: none;
+	color: @acccolor;
 	cursor: pointer;
 	font-weight: 900;
 	font-size: 1rem;
-	height: 3rem;
-	padding: none;
+	height: 4rem;
+	position: relative;
 	text-transform: uppercase;
-	width: 16rem;
+	transition: color 300ms;
+	width: 19rem;
 }
 
-.btn:hover {
-	background: @textcolor;
+.btn button::after {
+	background: @acccolor;
+	bottom: 0;
+	content: "";
+	left: 0;
+	position: absolute;
+	height: 0;
+	transition: height 300ms;
+	width: 100%;
+	z-index: -1;
 }
 
 .btn:hover button {
 	color: @bgcolor;
 }
 
+.btn:hover button::after {
+	height: 100%;
+}
+
 p {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 }
 
 main section {
@@ -154,6 +168,16 @@ main section {
 	}
 }
 
+.product-presentation h2::after, .problem-statement h2::after {
+	background-color: @bgcolor;
+	content: "";
+	height: 1px;
+	left: 0;
+	position: absolute;
+	top: 110%;
+	width: 50%;
+}
+
 .lightbar {
 	background: url(../src/img/bernard_rising_light.png);
 	background-repeat: no-repeat;
@@ -196,6 +220,10 @@ main section {
 		flex-direction: column;
 		justify-content: center;
 	}
+}
+
+.problem-statement h2::after {
+	background-color: @textcolor;
 }
 
 .problem-statement img {
@@ -255,7 +283,7 @@ main section {
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	margin: 1rem 0 0;
+	margin: 1rem 0 1rem;
 	width: 100%;
 }
 
@@ -267,6 +295,7 @@ main section {
 	color: @textcolor;
 	display: flex;
 	font-family: @hfont;
+	font-size: 1.5rem;
 	font-weight: 900;
 	height: 2.5rem;
 	justify-content: center;
@@ -295,7 +324,7 @@ main section {
 }
 
 .step p {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 }
 
 /* SECTION FIVE */
@@ -489,7 +518,7 @@ main section {
 	background-position: 0 100%;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-
+	z-index: 0;
 
 	@media @tablets {
 		background-position: 0 0;
@@ -502,15 +531,24 @@ main section {
 }
 
 .outro .btn {
-	border: 2px solid @bgcolor;
+	border: 3px solid @bgcolor;
 }
 
-.outro .btn:hover {
+.outro .btn button {
+	z-index: 1;
+}
+
+.outro .btn button::after {
 	background: @bgcolor;
+	z-index: 0;
+}
+
+.outro .btn:hover button::after {
+	height: 100%;
 }
 
 .outro .btn:hover button {
-	color: @textcolor;
+	color: @acccolor;
 }
 
 .outro .img-container {
