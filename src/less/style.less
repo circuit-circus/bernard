@@ -21,6 +21,7 @@
 }
 
 html {
+	background: @bgcolor;
 	font-size: 14px;
 }
 
@@ -114,7 +115,7 @@ main section {
 
 /* SECTION ONE */
 .introduction {
-	background: url(../src/img/bernard_cutout.png) #fff;
+	background: url(../src/img/bernard_cutout.png) @bgcolor;
 	background-position: 100% 100%;
 	background-repeat: no-repeat;
 	background-size: auto 90%;
@@ -211,8 +212,7 @@ main section {
 
 /* SECTION THREE */
 .problem-statement {
-	/*background: linear-gradient(#fff, #eee);
-	background-size: 100% auto;*/
+	background-image: url(img/bernard_binary.png);
 
 	@media @tablets {
 		align-items: center;
@@ -260,6 +260,7 @@ main section {
 .how-it-works h2 {
 	color: @bgcolor;
 	padding-top: 3rem;
+	margin-top: 0;
 }
 
 .steps {
@@ -304,13 +305,116 @@ main section {
 	width: 2.5rem;
 }
 
-.step img {
+.step-img-container {
 	height: 33vh;
-	margin-top: 5rem;
-	width: auto;
+	position: relative;
 
 	@media @tablets {
 		height: 20vh;
+	}
+}
+
+.step img {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	margin-top: 5rem;
+	position: absolute;
+	width: auto;
+}
+
+.phonehand {
+	animation-name: phonehand;
+	animation-duration: 1500ms;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: none;
+}
+
+@keyframes phonehand {
+	from {
+		transform: translate(5px, 5px);
+	}
+	to {
+		transform: translate(5px, 12px);
+	}
+}
+
+.cardhand {
+	animation: 1500ms cardhand infinite alternate ease-in-out;
+	animation-name: cardhand;
+	animation-duration: 1500ms;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: none;
+	transform: translate(10px, -15px);
+}
+
+@keyframes cardhand {
+	from {
+		transform: translate(10px, -15px);
+	}
+	to {
+		transform: translate(12px, -3px);
+	}
+}
+
+.hammerhand {
+	animation-name: hammerhand;
+	animation-duration: 7500ms;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: none;
+	transform: rotate(-15deg) translate(20px, 0px);
+}
+
+@keyframes hammerhand {
+	0% {
+		transform: rotate(-15deg) translate(20px, 0px);
+	}
+	10% {
+		transform: rotate(8deg) translate(-20px, 10px);
+	}
+	90% {
+		transform: rotate(8deg) translate(-20px, 10px);
+	}
+	100% {
+		transform: rotate(-15deg) translate(20px, 0);
+	}
+}
+
+.hammercrack {
+	animation-name: hammercrack;
+	animation-duration: 7500ms;
+	animation-timing-function: ease;
+	animation-delay: 800ms; // 10% of the hammerhand animation + small delay
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-fill-mode: none;
+	opacity: 0;
+}
+
+@keyframes hammercrack {
+	0% {
+		opacity: 0;
+	}
+	15% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 1;
+	}
+	85% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
 	}
 }
 

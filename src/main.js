@@ -27,9 +27,9 @@ $(document).ready(function() {
 			cardPx = cardMax - scrollPos,
 			cardTrans = 'rotate(-100deg) translate(' + cardPx + 'px)';
 		if(cardPx > 266) {
-			$('.card-img').css({
+			/*$('.card-img').css({
 				transform: cardTrans
-			});
+			});*/
 		}
 		
 		/* THE DESIGN */
@@ -73,12 +73,16 @@ $(document).ready(function() {
 	});
 
 	$(window).keyup(function(e) {
-		if($('.signup-sheet').hasClass('visible')) {
-			// If clicked esc
-			if(e.keyCode === 27) {
-				toggleSignup(false);
-				toggleContact(false);
-				toggleTerms(false);
+		// If clicked esc
+		if(e.keyCode === 27) {
+			if($('.signup-sheet').hasClass('visible')) {
+				toggleSignup(false);	
+			}
+			if($('.contact-sheet').hasClass('visible')) {
+				toggleContact(false);	
+			}
+			if($('.terms-sheet').hasClass('visible')) {
+				toggleTerms(false);	
 			}
 		}
 	});
