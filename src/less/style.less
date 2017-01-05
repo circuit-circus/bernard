@@ -101,7 +101,7 @@ h3 {
 	height: 100%;
 }
 
-p {
+p, li {
 	font-size: 1.25rem;
 }
 
@@ -169,24 +169,14 @@ main section {
 	}
 }
 
-.product-presentation h2::after, .problem-statement h2::after {
-	background-color: @bgcolor;
-	content: "";
-	height: 1px;
-	left: 0;
-	position: absolute;
-	top: 110%;
-	width: 50%;
-}
-
 .lightbar {
-	background: url(../src/img/bernard_rising_light.png);
+	background: url(../src/img/lightbars.png);
 	background-repeat: no-repeat;
 	bottom: 15%;
-	height: 591px;
+	height: 585px;
 	left: 10%;
 	position: absolute;
-	width: 400px;
+	width: 375px;
 
 	@media @tablets {
 		bottom: 20%;
@@ -200,14 +190,28 @@ main section {
 	// Create a selector with the class light-NUMBER
 	.light-@{i} {
 		// Set the background position to 0, -400px, -800px etc.
-		background-position: ( (@i - 1) * -400px) 0;
+		background-position: ( (@i - 1) * -375px) 0;
 	}
 	// Go on to the next part of the loop
 	.generate-light(@n, (@i + 1));
 }
 
-.product-presentation .sect-text h2, .product-presentation .sect-text p, .product-presentation .sect-text small {
+.product-presentation .sect-text p, .product-presentation .sect-text small {
 	color: @bgcolor;
+}
+
+.product-presentation h2 {
+	color: @textcolor;
+}
+
+.product-presentation h2::after, .problem-statement h2::after {
+	background-color: @textcolor;
+	content: "";
+	height: 1px;
+	left: 0;
+	position: absolute;
+	top: 110%;
+	width: 50%;
 }
 
 /* SECTION THREE */
@@ -324,6 +328,10 @@ main section {
 }
 
 .phonehand {
+	transform: translate(5px, 5px);
+}
+
+.animated .phonehand {
 	animation-name: phonehand;
 	animation-duration: 1500ms;
 	animation-timing-function: ease-in-out;
@@ -343,15 +351,18 @@ main section {
 }
 
 .cardhand {
+	transform: translate(10px, -15px);
+}
+
+.animated .cardhand {
 	animation: 1500ms cardhand infinite alternate ease-in-out;
 	animation-name: cardhand;
 	animation-duration: 1500ms;
 	animation-timing-function: ease-in-out;
-	animation-delay: 0;
+	animation-delay: 1500ms;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-fill-mode: none;
-	transform: translate(10px, -15px);
 }
 
 @keyframes cardhand {
@@ -364,14 +375,17 @@ main section {
 }
 
 .hammerhand {
+	transform: rotate(-15deg) translate(20px, 0px);
+}
+
+.animated .hammerhand {
 	animation-name: hammerhand;
-	animation-duration: 7500ms;
+	animation-duration: 6000ms;
 	animation-timing-function: ease-in-out;
-	animation-delay: 0;
+	animation-delay: 3000ms;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-fill-mode: none;
-	transform: rotate(-15deg) translate(20px, 0px);
 }
 
 @keyframes hammerhand {
@@ -390,14 +404,17 @@ main section {
 }
 
 .hammercrack {
+	opacity: 0;
+}
+
+.animated .hammercrack {
 	animation-name: hammercrack;
-	animation-duration: 7500ms;
+	animation-duration: 6000ms;
 	animation-timing-function: ease;
-	animation-delay: 800ms; // 10% of the hammerhand animation + small delay
+	animation-delay: 3660ms; // 10% of the hammerhand animation + small delay
 	animation-iteration-count: infinite;
 	animation-direction: normal;
 	animation-fill-mode: none;
-	opacity: 0;
 }
 
 @keyframes hammercrack {
@@ -573,7 +590,7 @@ main section {
 }
 
 .payment-label {
-	top: 15%;
+	top: 20%;
 
 	@media @tablets {
 		top: 32%;

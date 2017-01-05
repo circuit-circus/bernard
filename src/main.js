@@ -31,6 +31,12 @@ $(document).ready(function() {
 				transform: cardTrans
 			});*/
 		}
+
+		/* HOW IT WORKS */ 
+		var howTop = $('.how-it-works').offset().top;
+		if(scrollPos > howTop - 50) {
+			$('.how-it-works').addClass('animated');
+		}
 		
 		/* THE DESIGN */
 		var designTop = $('.the-design').offset().top;
