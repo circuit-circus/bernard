@@ -169,6 +169,11 @@ main section {
 	}
 }
 
+.product-presentation .sect-text {
+	background: @textcolor;
+	padding: 1rem;
+}
+
 .lightbar {
 	background: url(../src/img/lightbars.png);
 	background-repeat: no-repeat;
@@ -201,11 +206,12 @@ main section {
 }
 
 .product-presentation h2 {
-	color: @textcolor;
+	color: @bgcolor;
+	margin-top: 0;
 }
 
 .product-presentation h2::after, .problem-statement h2::after {
-	background-color: @textcolor;
+	background-color: @bgcolor;
 	content: "";
 	height: 1px;
 	left: 0;
@@ -492,15 +498,15 @@ main section {
 	position: absolute;
 }
 
-.spec-label:nth-child(3) {
+.spec-label:nth-child(4) {
 	transition: opacity 500ms;
 }
 
-.spec-label:nth-child(4) {
+.spec-label:nth-child(5) {
 	transition: opacity 500ms 500ms;
 }
 
-.spec-label:nth-child(5) {
+.spec-label:nth-child(6) {
 	transition: opacity 500ms 1000ms;
 }
 
@@ -553,18 +559,18 @@ main section {
 }
 
 .label-left {
-	left: 20%;
+	left: -120%;
 
 	@media @tablets {
-		left: 5%;
+		left: -25%;
 	}
 }
 
 .label-right {
-	left: 70%;
+	left: 150%;
 
 	@media @tablets {
-		left: 5%;
+		left: -25%;
 	}
 }
 
@@ -590,38 +596,26 @@ main section {
 }
 
 .payment-label {
-	top: 20%;
-
-	@media @tablets {
-		top: 32%;
-	}
+	top: 0%;
 }
 
 .materials-label {
-	top: 35%;
-
-	@media @tablets {
-		top: 50%;
-	}
+	top: 30%;
 }
 
 .tech-label {
 	top: 60%;
-
-	@media @tablets {
-		top: 75%;
-	}
-}
-
-.spec-label:nth-child(3) .label-line {
-	transition: width 500ms 50ms;
 }
 
 .spec-label:nth-child(4) .label-line {
-	transition: width 500ms 600ms;
+	transition: width 500ms 50ms;
 }
 
 .spec-label:nth-child(5) .label-line {
+	transition: width 500ms 600ms;
+}
+
+.spec-label:nth-child(6) .label-line {
 	transition: width 500ms 1150ms;
 }
 
