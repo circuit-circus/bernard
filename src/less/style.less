@@ -37,13 +37,19 @@ section {
 	width: 100vw;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	font-family: @hfont;
-	text-transform: uppercase;
+	font-weight: 400;
+	font-variant-ligatures: none;
+	letter-spacing: 1px;
+	//text-transform: uppercase;
 }
 
 p, button, small, ul {
 	font-family: @pfont;
+	font-variant-ligatures: none;
+	font-weight: 200;
+	line-height: 1.35;
 	margin: 0;
 }
 
@@ -62,7 +68,7 @@ h3 {
 }
 
 .btn {
-	border: 3px solid @acccolor;
+	border: 1px solid @acccolor;
 	display: inline-block;
 	margin-top: 2rem;
 }
@@ -72,7 +78,7 @@ h3 {
 	border: none;
 	color: @acccolor;
 	cursor: pointer;
-	font-weight: 900;
+	font-weight: 400;
 	font-size: 1rem;
 	height: 4rem;
 	position: relative;
@@ -123,6 +129,8 @@ main section {
 }
 
 .introduction .sect-text p {
+	font-size: 1.5rem;
+	margin-top: 1rem;
 	width: 100%;
 }
 
@@ -172,6 +180,7 @@ main section {
 .product-presentation .sect-text {
 	background: @textcolor;
 	padding: 1rem;
+	width: 30%;
 }
 
 .lightbar {
@@ -202,21 +211,21 @@ main section {
 }
 
 .product-presentation .sect-text p, .product-presentation .sect-text small {
-	color: @bgcolor;
+	color: @whitecolor;
 }
 
 .product-presentation h2 {
-	color: @bgcolor;
+	color: @whitecolor;
 	margin-top: 0;
 }
 
 .product-presentation h2::after, .problem-statement h2::after {
-	background-color: @bgcolor;
+	background-color: @whitecolor;
 	content: "";
 	height: 1px;
 	left: 0;
 	position: absolute;
-	top: 110%;
+	top: 115%;
 	width: 50%;
 }
 
@@ -234,6 +243,7 @@ main section {
 
 .problem-statement h2::after {
 	background-color: @textcolor;
+	top: 110%;
 }
 
 .problem-statement img {
@@ -244,6 +254,7 @@ main section {
 
 .problem-statement .sect-text {
 	top: 30%;
+	width: 40%;
 }
 
 .pig-img {
@@ -267,8 +278,9 @@ main section {
 	}
 }
 
-.how-it-works h2 {
-	color: @bgcolor;
+.how-it-works h3 {
+	color: @whitecolor;
+	font-size: 2.5rem;
 	padding-top: 3rem;
 	margin-top: 0;
 }
@@ -299,20 +311,23 @@ main section {
 }
 
 .step-number span {
-	background: @bgcolor;
+	background: @whitecolor;
 	align-items: center;
-	border: 3px solid @bgcolor;
+	border: 1px solid @whitecolor;
 	border-radius: 100%;
 	color: @textcolor;
 	display: flex;
-	font-family: @hfont;
+	font-family: @pfont;
 	font-size: 1.5rem;
-	font-weight: 900;
+	font-weight: 400;
 	height: 2.5rem;
 	justify-content: center;
 	text-align: center;
-	vertical-align: middle;
 	width: 2.5rem;
+}
+
+.step-number .inner-number {
+	align-self: center;
 }
 
 .step-img-container {
@@ -441,11 +456,11 @@ main section {
 	}
 }
 
-.step h3, .step p {
-	color: @bgcolor;
+.step h4, .step p {
+	color: @whitecolor;
 }
 
-.step h3 {
+.step h4 {
 	font-size: 2rem;
 	margin: 0 0 1rem;
 }
@@ -520,7 +535,7 @@ main section {
 }
 
 .size-label p {
-	font-family: @hfont;
+	font-family: @pfont;
 	font-size: 1rem;
 	text-align: center;
 }
@@ -646,7 +661,7 @@ main section {
 }
 
 .outro .btn {
-	border: 3px solid @bgcolor;
+	border: 1px solid @bgcolor;
 }
 
 .outro .btn button {
@@ -708,15 +723,16 @@ main section {
 }
 
 .signup-sheet h2, .signup-sheet p {
-	color: @bgcolor;
+	color: @whitecolor;
 }
 
 form input {
 	background: none; 
-	border: 3px solid @bgcolor;
-	color: @bgcolor;
-	font-family: @hfont;
+	border: 1px solid @whitecolor;
+	color: @whitecolor;
+	font-family: @pfont;
 	font-size: 1rem;
+	font-weight: 400;
 	margin-top: 2rem;
 	padding: 1rem;
 }
@@ -733,7 +749,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-	background: @bgcolor;
+	background: @whitecolor;
 	color: @textcolor;
 }
 
@@ -746,7 +762,7 @@ form input[type="submit"]:hover {
 .close {
 	background: none;
 	border: none;
-	color: @bgcolor;
+	color: @whitecolor;
 	cursor: pointer;
 	display: block;
 	font-family: @hfont;
@@ -766,8 +782,8 @@ footer {
 }
 
 footer td, footer td a {
-	color: @bgcolor;
-	font-family: @hfont;
+	color: @whitecolor;
+	font-family: @pfont;
 	text-transform: uppercase;
 }
 
@@ -870,11 +886,11 @@ footer table {
 }
 
 .terms-sheet h2 {
-	color: @bgcolor;
+	color: @whitecolor;
 }
 
 .terms-sheet p {
-	color: @bgcolor;
+	color: @whitecolor;
 	height: 80%;
 	overflow: scroll;
 }
