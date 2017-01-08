@@ -71,7 +71,7 @@ h3 {
 }
 
 .btn {
-	border: 1px solid @acccolor;
+	border: 1px solid @bgcolor;
 	display: inline-block;
 	margin-top: 2rem;
 }
@@ -79,7 +79,7 @@ h3 {
 .btn button {
 	background: none;
 	border: none;
-	color: @acccolor;
+	color: @bgcolor;
 	cursor: pointer;
 	font-weight: 400;
 	font-size: 1rem;
@@ -91,7 +91,7 @@ h3 {
 }
 
 .btn button::after {
-	background: @acccolor;
+	background: @bgcolor;
 	bottom: 0;
 	content: "";
 	left: 0;
@@ -103,7 +103,7 @@ h3 {
 }
 
 .btn:hover button {
-	color: @bgcolor;
+	color: @textcolor;
 }
 
 .btn:hover button::after {
@@ -124,25 +124,27 @@ main section {
 
 /* SECTION ONE */
 .introduction {
-	background: url(../src/img/bernard_cutout.png) @bgcolor;
-	background-position: 100% 100%;
+	background: url(../src/img/bottom_bernard.jpg) @textcolor;
+	background-position: 0 40%;
 	background-repeat: no-repeat;
-	background-size: auto 90%;
+	background-size: 100% auto;
 	z-index: 3;
 }
 
 .introduction .sect-text h1 {
+	color: @bgcolor;
 	font-family: @pfont;
 	font-weight: 500;
 	position: relative;
 }
 
 .introduction .sect-text h1 span {
+	color: @bgcolor;
 	font-weight: 800;
 }
 
 .introduction .sect-text h1::after {
-	background: @textcolor;
+	background: @bgcolor;
 	bottom: -25%;
 	content: "";
 	left: 0;
@@ -152,6 +154,7 @@ main section {
 }
 
 .introduction .sect-text p {
+	color: @bgcolor;
 	font-size: 1.5rem;
 	margin-top: 3rem;
 	width: 100%;
@@ -367,6 +370,7 @@ main section {
 .steps {
 	display: flex;
 	justify-content: center;
+	margin-top: 5rem;
 	width: 100%;
 }
 
@@ -567,7 +571,7 @@ main section {
 }
 
 .the-design .img-container {
-	margin: 0 auto;
+	margin: 5rem auto;
 	position: relative;
 	text-align: center;
 	width: 20vw;
@@ -580,7 +584,7 @@ main section {
 
 .the-design .img-container img {
 	height: auto;
-	width: 50%;
+	width: 100%;
 
 	@media @tablets {
 		height: 50vh;
@@ -726,8 +730,8 @@ main section {
 
 /* SECTION SIX */
 .outro {
-	background: url(../src/img/apartment_bg.jpg);
-	background-position: 0 100%;
+	background: url(../src/img/bottom_bernard.jpg);
+	background-position: 0 40%;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	z-index: 0;
