@@ -56,11 +56,13 @@ p, button, small, ul {
 h1 {
 	font-size: 4rem;
 	margin: 0;
+	font-weight: 800;
 }
 
 h2 {
 	font-size: 2rem;
 	position: relative;
+	font-weight: 800;
 }
 
 h3 {
@@ -137,6 +139,11 @@ main section {
 .sect-text {
 	position: absolute;
 	top: 20%;
+}
+
+.introduction .sect-text h1 img {
+	height: auto;
+	width: 1em;
 }
 
 .text-left {
@@ -241,9 +248,13 @@ main section {
 	}
 }
 
+.problem-statement h2 {
+	margin-bottom: 4rem;
+}
+
 .problem-statement h2::after {
 	background-color: @textcolor;
-	top: 110%;
+	top: 125%;
 }
 
 .prob-img-container {
