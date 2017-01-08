@@ -39,10 +39,10 @@ section {
 
 h1, h2, h3, h4 {
 	font-family: @hfont;
-	font-weight: 400;
+	font-weight: 800;
 	font-variant-ligatures: none;
 	letter-spacing: 1px;
-	//text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 p, button, small, ul {
@@ -57,16 +57,17 @@ h1 {
 	font-size: 4rem;
 	margin: 0;
 	font-weight: 800;
+	text-transform: none;
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	position: relative;
 	font-weight: 800;
 }
 
 h3 {
-	font-size: 3rem;
+	font-size: 2.5rem;
 }
 
 .btn {
@@ -130,9 +131,29 @@ main section {
 	z-index: 3;
 }
 
+.introduction .sect-text h1 {
+	font-family: @pfont;
+	font-weight: 500;
+	position: relative;
+}
+
+.introduction .sect-text h1 span {
+	font-weight: 800;
+}
+
+.introduction .sect-text h1::after {
+	background: @textcolor;
+	bottom: -25%;
+	content: "";
+	left: 0;
+	height: 1px;
+	position: absolute;
+	width: 75%;
+}
+
 .introduction .sect-text p {
 	font-size: 1.5rem;
-	margin-top: 1rem;
+	margin-top: 3rem;
 	width: 100%;
 }
 
@@ -141,9 +162,9 @@ main section {
 	top: 20%;
 }
 
-.introduction .sect-text h1 img {
+.introduction .sect-text img {
 	height: auto;
-	width: 1em;
+	width: 3.5rem;
 }
 
 .text-left {
