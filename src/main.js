@@ -33,6 +33,11 @@ $(document).ready(function() {
 		}
 
 		/* HOW IT WORKS */ 
+		if(scrollPos > probTop - 50) {
+			$('.problem-statement').addClass('animated');
+		}
+
+		/* HOW IT WORKS */ 
 		var howTop = $('.how-it-works').offset().top;
 		if(scrollPos > howTop - 50) {
 			$('.how-it-works').addClass('animated');

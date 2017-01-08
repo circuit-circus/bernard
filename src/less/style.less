@@ -246,24 +246,71 @@ main section {
 	top: 110%;
 }
 
-.problem-statement img {
+.prob-img-container {
 	position: absolute;
+	right: 20%;
 	width: 20rem;
-	top: 30%;
+	top: 5%;
+}
+
+.prob-img-container img {
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: translateY(0px);
+	width: 100%;
+}
+
+.prob-img-container img:nth-child(2) {
+	//opacity: 0;
+	transform: translateY(-85px);
+	transition: all 1600ms 400ms;
+}
+.prob-img-container img:nth-child(3) {
+	//opacity: 0;
+	transform: translateY(-145px);
+	transition: all 1500ms 300ms;
+}
+.prob-img-container img:nth-child(4) {
+	//opacity: 0;
+	transform: translateY(-195px);
+	transition: all 1400ms 200ms;
+}
+.prob-img-container img:nth-child(5) {
+	//opacity: 0;
+	transform: translateY(-255px);
+	transition: all 1300ms 100ms;
+}
+.prob-img-container img:nth-child(6) {
+	//opacity: 0;
+	transform: translateY(-335px);
+	transition: all 1200ms;
+}
+
+.problem-statement.animated .prob-img-container img:nth-child(2) {
+	//opacity: 1;
+	transform: translateY(15px);
+}
+.problem-statement.animated .prob-img-container img:nth-child(3) {
+	//opacity: 1;
+	transform: translateY(15px);
+}
+.problem-statement.animated .prob-img-container img:nth-child(4) {
+	//opacity: 1;
+	transform: translateY(15px);
+}
+.problem-statement.animated .prob-img-container img:nth-child(5) {
+	//opacity: 1;
+	transform: translateY(15px);
+}
+.problem-statement.animated .prob-img-container img:nth-child(6) {
+	//opacity: 1;
+	transform: translateY(15px);
 }
 
 .problem-statement .sect-text {
 	top: 30%;
 	width: 40%;
-}
-
-.pig-img {
-	right: 20%;
-}
-
-.card-img {
-	transform: rotate(-100deg) translate(calc(~"20rem + 20px"));
-	right: 12%;
 }
 
 /* SECTION FOUR */
@@ -313,7 +360,6 @@ main section {
 .step-number span {
 	background: @whitecolor;
 	align-items: center;
-	border: 1px solid @whitecolor;
 	border-radius: 100%;
 	color: @textcolor;
 	display: flex;
@@ -326,8 +372,9 @@ main section {
 	width: 2.5rem;
 }
 
-.step-number .inner-number {
-	align-self: center;
+.step-number img {
+	height: 66%;
+	width: 66%;
 }
 
 .step-img-container {
@@ -339,7 +386,7 @@ main section {
 	}
 }
 
-.step img {
+.step-img-container img {
 	bottom: 0;
 	height: 100%;
 	left: 0;
@@ -490,6 +537,7 @@ main section {
 .the-design .img-container {
 	margin: 0 auto;
 	position: relative;
+	text-align: center;
 	width: 20vw;
 
 	@media @tablets {
@@ -500,7 +548,7 @@ main section {
 
 .the-design .img-container img {
 	height: auto;
-	width: 100%;
+	width: 50%;
 
 	@media @tablets {
 		height: 50vh;
@@ -511,6 +559,7 @@ main section {
 .spec-label {
 	opacity: 0;
 	position: absolute;
+	text-align: left;
 }
 
 .spec-label:nth-child(4) {
@@ -532,6 +581,7 @@ main section {
 
 .size-label {
 	position: absolute;
+	text-align: left;
 }
 
 .size-label p {
@@ -686,10 +736,11 @@ main section {
 }
 
 .outro .img-container img {
+	height: auto;
 	position: absolute;
 	right: 20%;
 	top: 25%;
-	width: 25rem;
+	width: 15rem;
 }
 
 .bernard-one {
