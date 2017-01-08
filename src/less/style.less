@@ -210,7 +210,7 @@ main section {
 
 .product-presentation .sect-text {
 	background: @textcolor;
-	padding: 1rem;
+	padding: 2rem;
 	width: 30%;
 }
 
@@ -247,7 +247,7 @@ main section {
 
 .product-presentation h2 {
 	color: @whitecolor;
-	margin-top: 0;
+	margin: 0 auto 3rem;
 }
 
 .product-presentation h2::after, .problem-statement h2::after {
@@ -256,7 +256,7 @@ main section {
 	height: 1px;
 	left: 0;
 	position: absolute;
-	top: 115%;
+	top: 140%;
 	width: 50%;
 }
 
@@ -278,7 +278,7 @@ main section {
 
 .problem-statement h2::after {
 	background-color: @textcolor;
-	top: 125%;
+	top: 155%;
 }
 
 .prob-img-container {
@@ -730,7 +730,7 @@ main section {
 
 /* SECTION SIX */
 .outro {
-	background: url(../src/img/bottom_bernard.jpg);
+	background: url(../src/img/two_bernards.jpg) @textcolor;
 	background-position: 0 40%;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
@@ -740,6 +740,10 @@ main section {
 		background-position: 0 0;
 		background-size: auto 100%;
 	}
+}
+
+.outro .sect-text h2 {
+	font-size: 2rem;
 }
 
 .outro .sect-text h2, .outro .sect-text p, .outro .sect-text button {
