@@ -124,7 +124,7 @@ main section {
 
 /* SECTION ONE */
 .introduction {
-	background: url(../src/img/bottom_bernard.jpg) @textcolor;
+	background: url(../src/img/two_bernards.jpg) @textcolor;
 	background-position: 0 40%;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
@@ -196,10 +196,10 @@ main section {
 
 /* SECTION TWO */
 .product-presentation {
-	background: url(../src/img/kitchen_bg.jpg);
+	/*background: url(../src/img/bottom_bernard.jpg);
 	background-position: 100% 50%;
 	background-repeat: no-repeat;
-	background-size: 100% auto;
+	background-size: 100% auto;*/
 	z-index: 1;
 
 	@media @tablets {
@@ -208,8 +208,37 @@ main section {
 	}
 }
 
+.product-pres-test {
+	/*animation-name: closeup;
+	animation-duration: 5000ms;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;*/
+
+	background: url(../src/img/bottom_bernard.jpg);
+	background-position-x: 50%;
+	background-position-y: 100%;
+	background-repeat: no-repeat;
+	background-size: 125% auto;
+
+	height: 100%;
+	width: 100%;
+	transform: rotateY(180deg);
+}
+
+@keyframes closeup {
+	from {
+		background-position-y: 100%;
+	}
+	to {
+		background-position-y: 0%;
+	}
+}
+
 .product-presentation .sect-text {
-	background: @textcolor;
+	//background: @textcolor;
 	padding: 2rem;
 	width: 30%;
 }
@@ -242,16 +271,16 @@ main section {
 }
 
 .product-presentation .sect-text p, .product-presentation .sect-text small {
-	color: @whitecolor;
+	color: @bgcolor;
 }
 
 .product-presentation h2 {
-	color: @whitecolor;
+	color: @bgcolor;
 	margin: 0 auto 3rem;
 }
 
 .product-presentation h2::after, .problem-statement h2::after {
-	background-color: @whitecolor;
+	background-color: @bgcolor;
 	content: "";
 	height: 1px;
 	left: 0;
@@ -730,8 +759,8 @@ main section {
 
 /* SECTION SIX */
 .outro {
-	background: url(../src/img/two_bernards.jpg) @textcolor;
-	background-position: 0 40%;
+	background: url(../src/img/bottom_bernard.jpg) @textcolor;
+	background-position: 0 50%;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	z-index: 0;

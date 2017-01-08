@@ -10,16 +10,16 @@ $(document).ready(function() {
 			stepFour = presTop + (sectionDelta / 4) * 3;
 
 		if(scrollPos < presTop) {
-			updateLightbar(1);
+			//updateLightbar(1);
 		}
 		else if(scrollPos < stepTwo) {
-			updateLightbar(2);
+			//updateLightbar(2);
 		}
 		else if(scrollPos < stepThree) {
-			updateLightbar(3);
+			//updateLightbar(3);
 		}
 		else if(scrollPos < stepFour) {
-			updateLightbar(4);
+			//updateLightbar(4);
 		}
 
 		/* CREDIT CARD */
@@ -42,6 +42,9 @@ $(document).ready(function() {
 		if(scrollPos > howTop - 50) {
 			$('.how-it-works').addClass('animated');
 		}
+
+		var newBgPos = mapValue(scrollPos, howTop, probTop, 0, 50);
+		$('.product-pres-test').css('background-position-y', newBgPos + "%");
 		
 		/* THE DESIGN */
 		var designTop = $('.the-design').offset().top;
@@ -103,6 +106,10 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 });
+
+function mapValue(n, start1, stop1, start2, stop2) {
+	return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;
+};
 
 function thankYouForm() {
 	$('.signup-sheet form').addClass('sent');
