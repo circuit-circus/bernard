@@ -99,9 +99,16 @@ $(document).ready(function() {
 	});
 
 	$('.signup-sheet form').submit(function(e) {
+		thankYouForm();
 		e.preventDefault();
 	});
 });
+
+function thankYouForm() {
+	$('.signup-sheet form').addClass('sent');
+	$('.signup-sheet input[type="submit"').val('Thanks!').attr('disabled', 'disabled');
+	$('.signup-sheet input[type="email"').val('We\'ll get in touch soon.').attr('disabled', 'disabled');
+}
 
 function updateLightbar(newNumber) {
 	var lightElem = $('.lightbar');
