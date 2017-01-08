@@ -1,4 +1,20 @@
 $(document).ready(function() {
+	$(window).resize(function() {
+		var wWidth = $(window).width(),
+			wHeight = $(window).height();
+
+		if(wHeight > 874) {
+			$('.introduction').css('background-size', 'auto 100%');
+		}
+		else if(wWidth < 1440) {
+			$('.introduction').css('background-size', 'auto 100%');
+			$('.introduction').css('background-position-x', '50%');
+		}
+		else {
+			$('.introduction').css('background-size', '100% auto');
+		}
+	});
+
 	$(window).scroll(function() {
 		/* LIGHTBAR */ 
 		var scrollPos = $(window).scrollTop(),
