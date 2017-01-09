@@ -124,10 +124,8 @@ main section {
 
 /* SECTION ONE */
 .introduction {
-	background: url(../src/img/two_bernards.jpg) @textcolor;
-	background-position: 0 40%;
-	background-repeat: no-repeat;
-	background-size: auto 100%;
+	background: url(../src/img/two_bernards.jpg) @textcolor  no-repeat center center fixed;
+	background-size: cover;
 	z-index: 3;
 }
 
@@ -172,6 +170,7 @@ main section {
 
 .text-left {
 	left: 15%;
+	margin-right: 3rem;
 }
 
 .text-center {
@@ -759,16 +758,9 @@ main section {
 
 /* SECTION SIX */
 .outro {
-	background: url(../src/img/bottom_bernard.jpg) @textcolor;
-	background-position: 0 50%;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
+	background: url(../src/img/bottom_bernard.jpg) @textcolor  no-repeat center center fixed;
+	background-size: cover;
 	z-index: 0;
-
-	@media @tablets {
-		background-position: 0 0;
-		background-size: auto 100%;
-	}
 }
 
 .outro .sect-text h2 {
